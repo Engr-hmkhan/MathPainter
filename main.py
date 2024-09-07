@@ -14,11 +14,27 @@ class Canvas:
         self.data = np.zeros((self.height, self.width, 3), dtype=np.uint8)
         self.data[:] = self.color
 
-    def make(self, imagepath):
+    def make(self, image_path):
         """convert the current array into an image file"""
 
         img = Image.fromarray(self.data, 'RGB')
-        img.save(imagepath)
+        img.save(image_path)
+
+class Square:
+    """A square shape, can be made on a canvas object"""
+
+    def __init__(self, x, y, side, color):
+        self.x = x
+        self.y = y
+        self.side = side
+        self.color = color
+
+    def draw(self, canvas):
+        """Draws itself into the canvas object"""
+        # changing a slice of the array with the new values
+        canvas.data[self.x : self.x + self.side, self.y : self.side] = self.color
+
+
 
 
     # Creating 3D Numpy arrays of  zeros and then rep;ace zeros with yellow pixels.
