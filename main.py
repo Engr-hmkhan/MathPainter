@@ -14,6 +14,13 @@ class Canvas:
         self.data = np.zeros((self.height, self.width, 3), dtype=np.uint8)
         self.data[:] = self.color
 
+    def make(self, imagepath):
+        """convert the current array into an image file"""
+
+        img = Image.fromarray(self.data, 'RGB')
+        img.save(imagepath)
+
+
     # Creating 3D Numpy arrays of  zeros and then rep;ace zeros with yellow pixels.
 
 
