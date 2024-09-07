@@ -1,25 +1,20 @@
 import numpy as np
 from PIL import Image
 
-# Creating 3D Numpy arrays of  zeros and then rep;ace zeros with yellow pixels.
+class Canvas:
+    """Object where all shapes are going to be drawn"""
 
-data = np.zeros((5, 4, 3), dtype=np.uint8)
-data[:] = [255, 255, 0] # 255 represent full red, green, blue # 0 represent black
-# print(data)
+    def __init__(self, height, width, color):
+        self.height = height
+        self.width = width
+        self.color = color
 
-# make a red patch
-# data[1:3] = [255, 0, 0]
-# print(data)
+        # Creating 3D Numpy arrays of  zeros and then replace zeros with yellow pixels.
 
-#if you want to change all the rows but not all columns
-# data[:, 1:3] = [255, 0, 0]
-# print(data)
+        self.data = np.zeros((self.height, self.width, 3), dtype=np.uint8)
+        self.data[:] = self.color
 
-#if you want to change some rows and some columns
-data[1:3, 1:3] = [255, 0, 0]
-data[0:2, 0:2] = [100, 200, 10]
-data[3:, 2:4] = [255, 255, 255]
+    # Creating 3D Numpy arrays of  zeros and then rep;ace zeros with yellow pixels.
 
-img = Image.fromarray(data, 'RGB')
-img.save('canvas.png')
+
 
