@@ -5,3 +5,7 @@ from PIL import Image
 
 data = np.zeros((5, 4, 3), dtype=np.uint8)
 data[:] = [255, 255, 0] # 255 represent full red, green, blue # 0 represent black
+print(data)
+
+img = Image.fromarray(data, 'RGB')
+img.save('canvas.png')
