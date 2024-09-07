@@ -32,12 +32,16 @@ class Square:
     def draw(self, canvas):
         """Draws itself into the canvas object"""
         # changing a slice of the array with the new values
-        canvas.data[self.x : self.x + self.side, self.y : self.side] = self.color
+        canvas.data[self.x : self.x + self.side, self.y : self.y + self.side] = self.color
 
 
 # instantiating the class canvas
-
 canvas = Canvas(30, 40, color = (255, 255, 255))
+
+# instantiating the square in the canvas
+square = Square(5,5,10, color = (0,255,0))
+square.draw(canvas)
+
 canvas.make('canvas.png')
 
 
