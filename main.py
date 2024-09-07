@@ -56,6 +56,10 @@ canvas = Canvas(30, 40, color = (255, 255, 255))
 square = Square(5,5,10, color = (0,255,0))
 square.draw(canvas)
 
+# instantiating the Rectangle in the canvas
+rectangle = Rectangle(15, 20, 10, 15, color = (255, 0, 0))
+rectangle.draw(canvas)
+
 canvas.make('canvas.png')
 
 
