@@ -9,7 +9,7 @@ class Canvas:
         self.width = width
         self.color = color
 
-        # Creating 3D Numpy arrays of  zeros and then replace zeros with yellow pixels.
+        # Creating 3D Numpy arrays of  zeros and then replace zeros with given pixels.
 
         self.data = np.zeros((self.height, self.width, 3), dtype=np.uint8)
         self.data[:] = self.color
@@ -35,9 +35,10 @@ class Square:
         canvas.data[self.x : self.x + self.side, self.y : self.side] = self.color
 
 
+# instantiating the class canvas
 
-
-    # Creating 3D Numpy arrays of  zeros and then rep;ace zeros with yellow pixels.
+canvas = Canvas(30, 40, color = (255, 255, 255))
+canvas.make('canvas.png')
 
 
 
