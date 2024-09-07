@@ -34,6 +34,20 @@ class Square:
         # changing a slice of the array with the new values
         canvas.data[self.x : self.x + self.side, self.y : self.y + self.side] = self.color
 
+class Rectangle:
+    """A Rectangle shape, can be drawn on a canvas object"""
+
+    def __init__(self, x, y, height, width, color):
+        self.x = x
+        self.y = y
+        self.height = height
+        self.width = width
+        self.color = color
+
+    def draw(self, canvas):
+        """Draws itself into the canvas object"""
+        # changing a slice of the array with the new values
+        canvas.data[self.x : self.x + self.height, self.y : self.y + self.width] = self.color
 
 # instantiating the class canvas
 canvas = Canvas(30, 40, color = (255, 255, 255))
